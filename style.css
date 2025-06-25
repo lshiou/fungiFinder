@@ -182,6 +182,34 @@
   }
 }
 
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+@layer layout {
+  .wrapper {
+    max-width: 1130px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .wrapper--narrow {
+    max-width: 720px;
+  }
+
+  .wrapper--wide {
+    max-width: 1330px;
+  }
+}
+
 @font-face {
   font-family: "Fira Sans";
   src: url("assets/fonts/FiraSans-Regular.ttf") format("truetype");
