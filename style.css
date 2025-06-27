@@ -182,21 +182,61 @@
   a:focus-visible {
     color: var(--text-brand-light);
   }
-}
 
-@layer utilities {
-  .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  img {
+    border-radius: var(--border-radius-3);
   }
 }
 
 @layer layout {
+  /* adds margin to the top of each direct descendant of .flow, except the first child */
+  /* select an element only if it has another element before it */
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+    /* 
+    1em will have more space than 1 rem, because the spacing is based on the font size of that element.
+    As a result, it works better in terms of typopgrahy.
+    If using 1rem, all spacing will the the same, regardless of the font size.
+     */
+  }
+
+  .equal-columns {
+    display: grid;
+    gap: var(--equal-columns-gap, 1rem); /* initialize to 1rem */
+    align-items: var(--equal-columns-vertical-aligment, start);
+
+    @media (width > 760px) {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr; /* same size for all columns */
+    }
+
+    &.large-gap {
+      --equal-columns-gap: 2rem;
+    }
+    &.no-gap {
+      --equal-columns-gap: 0;
+    }
+
+    &.valign-centered {
+      --equal-columns-vertical-aligment: center;
+    }
+  }
+
+  .section {
+    --padding: 3.75rem;
+    padding-block: var(--padding);
+
+    @media (min-width: 760px) {
+      --padding: 8rem;
+    }
+
+    &.padding-compact {
+      @media (min-width: 760px) {
+        padding-block: 4.5rem;
+      }
+    }
+  }
+
   .wrapper {
     --wrapper-max-width: 1130px;
     --wrapper-padding: 1rem;
@@ -216,20 +256,92 @@
   .wrapper--wide {
     --wrapper-max-width: 1330px;
   }
+}
 
-  .section {
-    --padding: 3.75rem;
-    padding-block: var(--padding);
+/* layer 'components' is more for one off styling, vs layer 'layout' is more for reusable layouts */
+@layer components {
+  .site-header {
+    padding-block: 1rem;
+  }
 
-    @media (min-width: 760px) {
-      --padding: 8rem;
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  .primary-navigation {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
     }
 
-    &.padding-compact {
-      @media (min-width: 760px) {
-        padding-block: 4.5rem;
-      }
+    a {
+      text-decoration: none;
     }
+  }
+}
+
+@layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  .text-brand {
+    color: var(--text-brand);
+  }
+  .text-high-contrast {
+    color: var(--text-high-contrast);
+  }
+
+  .section-title {
+    font-size: var(--font-size-heading-regular);
+  }
+
+  .background-base {
+    background-color: var(--background-base);
+  }
+  .background-light {
+    background-color: var(--background-light);
+  }
+  .background-extra-light {
+    background-color: var(--background-extra-light);
+  }
+  .background-dark {
+    background-color: var(--background-dark);
+  }
+  .background-extra-dark {
+    background-color: var(--background-extra-dark);
+  }
+  .background-accent {
+    background-color: var(--background-accent-dark);
+  }
+
+  .font-size-sm {
+    font-size: var(--font-size-sm);
+  }
+  .font-size-regular {
+    font-size: var(--font-size-regular);
+  }
+  .font-size-md {
+    font-size: var(--font-size-md);
+  }
+  .font-size-lg {
+    font-size: var(--font-size-lg);
   }
 }
 

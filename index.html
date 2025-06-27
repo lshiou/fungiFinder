@@ -9,22 +9,24 @@
   <body>
     <header class="site-header">
       <div class="wrapper wrapper--wide">
-        <img src="/assets/fungi-finders.svg" alt="Fungi Finders" />
-        <nav class="primary-navigation">
-          <ul>
-            <li><a href="/">Discover</a></li>
-            <li><a href="#">Mushroom Guide</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </nav>
+        <div class="site-header__inner">
+          <img src="/assets/fungi-finders.svg" alt="Fungi Finders" />
+          <nav class="primary-navigation">
+            <ul>
+              <li><a href="/">Discover</a></li>
+              <li><a href="#">Mushroom Guide</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
-      <section class="hero section padding-compact">
+      <section class="hero flow section padding-compact">
         <div class="wrapper">
           <h1>Discover the World of Mushroom Foraging</h1>
         </div>
-        <div class="wrapper wrapper--narrow">
+        <div class="wrapper flow wrapper--narrow">
           <p>
             Mushroom foraging is the art and science of identifying and
             collecting wild mushrooms.
@@ -42,8 +44,8 @@
         </div>
       </section>
       <section class="section">
-        <div class="wrapper">
-          <h2>The joys of mushroom foraging</h2>
+        <div class="wrapper flow">
+          <h2 class="section-title">The joys of mushroom foraging</h2>
           <p>
             Foraging for mushrooms can be a rewarding experience for many
             reasons. People may venture off into the woods to forage for
@@ -51,7 +53,8 @@
             thrill of the hunt, and savor the satisfaction of finding a hidden
             culinary treasure.
           </p>
-          <div>
+          <!-- three columns -->
+          <div class="equal-columns">
             <div class="card-sm">
               <img
                 src="/assets/outdoor-exploration.webp"
@@ -99,9 +102,13 @@
           </div>
         </div>
       </section>
-      <section class="section padding-compact">
-        <div class="wrapper wrapper--narrow">
-          <h2>Start your <span>Foraging Adventure!</span></h2>
+      <section class="section padding-compact background-accent">
+        <div
+          class="wrapper wrapper--narrow flow font-size-lg text-high-contrast text-center"
+        >
+          <h2 class="section-title">
+            Start your <span class="text-brand">Foraging Adventure!</span>
+          </h2>
           <p>
             Whether you're seeking a deeper connection with nature, a new
             outdoor hobby, or simply love the idea of finding your own food,
@@ -109,51 +116,55 @@
           </p>
         </div>
       </section>
-      <section class="section">
+      <section class="section background-extra-dark">
         <!-- two columns -->
         <div class="wrapper wrapper--wide">
-          <div>
-            <img src="/assets/get-to-know.webp" alt="man foraging mushroom" />
-          </div>
-          <div>
-            <h2>Get to know your mushrooms</h2>
-            <p>
-              Successful and safe mushroom foraging begins with a deep
-              understanding of the species you'll encounter in the wild - not
-              just what the edible ones look like, but their toxic look-alikes,
-              seasonal patterns, and preferred habitats.
-            </p>
-            <p>
-              It can feel like a big task, but we’ve got a handy reference guide
-              to help you out!
-            </p>
-            <a href="/referenceGuide.html" class="button">
-              <span class="visually-hidden">
-                Learn more about mushrooms with our helpful
-              </span>
-              Reference Guide
-            </a>
+          <div class="equal-columns large-gap valign-centered">
+            <div>
+              <img src="/assets/get-to-know.webp" alt="man foraging mushroom" />
+            </div>
+            <div class="flow font-size-lg">
+              <h2 class="section-title">Get to know your mushrooms</h2>
+              <p>
+                Successful and safe mushroom foraging begins with a deep
+                understanding of the species you'll encounter in the wild - not
+                just what the edible ones look like, but their toxic
+                look-alikes, seasonal patterns, and preferred habitats.
+              </p>
+              <p>
+                It can feel like a big task, but we’ve got a handy reference
+                guide to help you out!
+              </p>
+              <a href="/referenceGuide.html" class="button">
+                <span class="visually-hidden">
+                  Learn more about mushrooms with our helpful
+                </span>
+                Reference Guide
+              </a>
+            </div>
           </div>
         </div>
       </section>
       <section class="section">
         <!-- two columns -->
         <div class="wrapper wrapper--wide">
-          <div>
-            <h2>Connect with Nature</h2>
-            <p>
-              Experience the beauty of the great outdoors while foraging for
-              mushrooms with fellow enthusiasts.
-            </p>
-            <a href="/referenceGuide.html" class="button">
-              Learn more
-              <span class="visually-hidden">
-                about mushrooms with our handy mushroom guide.
-              </span>
-            </a>
-          </div>
-          <div>
-            <img src="/assets/nature.webp" alt="mushroom in the wild" />
+          <div class="equal-columns large-gap valign-centered">
+            <div class="flow font-size-lg">
+              <h2 class="section-title">Connect with Nature</h2>
+              <p>
+                Experience the beauty of the great outdoors while foraging for
+                mushrooms with fellow enthusiasts.
+              </p>
+              <a href="/referenceGuide.html" class="button">
+                Learn more
+                <span class="visually-hidden">
+                  about mushrooms with our handy mushroom guide.
+                </span>
+              </a>
+            </div>
+            <div>
+              <img src="/assets/nature.webp" alt="mushroom in the wild" />
+            </div>
           </div>
         </div>
       </section>
