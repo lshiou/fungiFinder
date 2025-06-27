@@ -200,6 +200,12 @@
      */
   }
 
+  .grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 1rem);
+    /* won't make any difference if using 1em in this case, because it is used for gap */
+  }
+
   .equal-columns {
     display: grid;
     gap: var(--equal-columns-gap, 1rem); /* initialize to 1rem */
@@ -283,6 +289,24 @@
 
     a {
       text-decoration: none;
+    }
+  }
+
+  .hero {
+    text-align: center;
+    background-image: url(/assets/hero.webp);
+    background-size: cover;
+    font-size: var(--font-size-md);
+    color: var(--text-high-contrast);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-heading-lg);
+
+    > span {
+      display: block;
+      font-size: var(--font-size-heading-xl);
+      color: var(--text-brand);
     }
   }
 }
