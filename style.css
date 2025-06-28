@@ -135,6 +135,8 @@
     --border-radius-2: 0.5rem;
     --border-radius-3: 0.75rem;
 
+    /* increasing the font sizes for these primitive custom properties for font sizes,
+    so that the semantic version font sizes will be updated automatically when breakpoint is reached */
     @media (width > 760px) {
       --fs-500: 1.25rem;
       --fs-600: 1.5rem;
@@ -304,10 +306,28 @@
     font-size: var(--font-size-heading-lg);
 
     > span {
-      display: block;
+      display: block; /* forcing that to be on separate line */
       font-size: var(--font-size-heading-xl);
       color: var(--text-brand);
     }
+  }
+
+  .card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-3);
+
+    img {
+      border-radius: var(--border-radius-2);
+    }
+  }
+
+  .card__title {
+    /* providing fallback values for --card-title-color amd --card-title-font-size */
+    color: var(--card-title-color, var(--text-brand));
+    font-size: var(--card-title-font-size, var(--font-size-heading-sm));
   }
 }
 
