@@ -279,6 +279,16 @@
     justify-content: space-between;
   }
 
+  [aria-controls="primary-navigation"] {
+    z-index: 100;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+      border-radius: 0;
+    }
+  }
   .primary-navigation {
     ul {
       list-style: none;
@@ -291,6 +301,39 @@
 
     a {
       text-decoration: none;
+    }
+
+    /* or max-width: 760px */
+    @media (width < 760px) {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      font-size: --font-size-lg;
+      font-weight: 700;
+      font-family: var(--ff-heading);
+      background-color: var(--background-accent-main);
+      padding: 2rem;
+      border-radius: 0 0 0 var(--border-radius-3);
+      ul {
+        flex-direction: column;
+      }
+
+      /* li that has an li above */
+      /* optionally can use li:not(:first-child) */
+      li + li {
+        border-top: 2px solid var(--background-accent-light);
+        margin-block-start: 1rem;
+        padding-block-start: 1rem;
+      }
+    }
+  }
+
+  @media (width < 760px) {
+    /* when any sibling before primary nav has aria-expanded true */
+    [aria-expanded="true"] ~ .primary-navigation {
+      display: block;
     }
   }
 
